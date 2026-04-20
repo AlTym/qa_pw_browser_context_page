@@ -6,8 +6,8 @@ export class HomePage {
     this.yourFeedTab = page.getByText('Your Feed');
     this.globalFeedTab = page.getByText('Global Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
-    this.firstGlobalFeedArticle = page.getByRole(
-      'link', { name: 'Article title:' }).first();
+    this.firstGlobalFeedArticle = page.locator(
+      '.article-preview').first();
     this.noAriclesText = page.getByText('No articles are here... yet.');
     this.settingsButon = page.getByRole('link', { name: 'Settings' });
     this.signInLink = page.getByRole(
@@ -45,7 +45,7 @@ export class HomePage {
   }
 
   authorLinkInArticleHeader(username) {
-    return this.page.getByRole('link', { username }).first();
+    return this.page.getByRole('link', { name: username }).first();
   }
 
   async assertArticleAuthorNameIsVisible(username) {

@@ -22,7 +22,6 @@ test(`User can sign in with changed in profile password`, async ({
   await settingsPage.fillPasswordField(newPassword);
   await settingsPage.clickOnUpdateSettingsButon();
   await settingsPage.clickOnLogoutButon();
-  await homePage.clickSignInLink();
   await signInPage.open();
   await signInPage.fillEmailField(user1.email);
   await signInPage.fillPasswordField(newPassword);
