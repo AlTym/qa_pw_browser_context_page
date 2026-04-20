@@ -5,9 +5,9 @@ export class ViewArticlePage {
     this.page = page;
     this.articleTitleHeader = page.getByRole('heading');
     this.followArticleButon = page.getByRole(
-      'button', {name: 'Follow'}).first();
+      'button', {name:  /Follow/ }).first();
     this.unfollowArticleButon = page.getByRole(
-      'button', {name: 'Unfollow'}).first();
+      'button', {name: /Unfollow/}).first();
     this.editArticleButon = page.getByRole(
       'link', {name: 'Edit Article'}).first();
     this.homePageLink = page.getByRole('link', { name: 'Home' });
